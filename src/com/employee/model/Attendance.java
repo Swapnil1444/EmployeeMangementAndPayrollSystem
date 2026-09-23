@@ -1,8 +1,9 @@
 package com.employee.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 
-public class Attendance {
+public class Attendance implements Serializable{
 
 	private int attendanceId;
 	private int empId;
