@@ -1,6 +1,6 @@
 package com.employee.exception;
 
-public class InvalidInputException extends Exception{
+public class InvalidInputException extends RuntimeException{
 
 	public InvalidInputException(String msg) {
 		super(msg);
