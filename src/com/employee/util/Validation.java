@@ -60,14 +60,6 @@ public class Validation {
 		}
 	}
 	
-	public static void main(String[] args) {
-		try {
-			validAdharNo("9987 4433 4434");
-			validEmail("swapn@gmail.com");
-		} catch (InvalidInputException e) {
-			// TODO Auto-generated catch block
-			e.printStackTrace();
-		}
-	}
+
 
 }

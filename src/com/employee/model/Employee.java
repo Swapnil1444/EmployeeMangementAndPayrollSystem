@@ -150,13 +150,25 @@ public class Employee {
 		return Period.between(joinDate, LocalDate.now()).getYears();
 	}
 
+
 	@Override
 	public String toString() {
-		return "Employee [empId=" + empId + ", firstName=" + firstName + ", lastName=" + lastName + ", email=" + email
-				+ ", phoneNo=" + phoneNo + ", address=" + address + ", gender=" + gender + ", dept=" + dept
-				+ ", destination=" + destination + ", joinDate=" + joinDate + ", baseSalary=" + baseSalary
-				+ ", empStatus=" + empStatus + "]";
+	    return "Employee {" +
+	           "\n  Employee ID     : " + empId +
+	           "\n  First Name      : " + firstName +
+	           "\n  Last Name       : " + lastName +
+	           "\n  Email           : " + email +
+	           "\n  Phone No        : " + phoneNo +
+	           "\n  Address         : " + address +
+	           "\n  Gender          : " + gender +
+	           "\n  Department      : " + dept +
+	           "\n  Designation     : " + destination +
+	           "\n  Join Date       : " + joinDate +
+	           "\n  Base Salary     : " + baseSalary +
+	           "\n  Employee Status : " + empStatus +
+	           "\n}";
 	}
+
 	
 	
 

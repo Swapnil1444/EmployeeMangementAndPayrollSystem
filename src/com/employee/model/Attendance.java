@@ -60,11 +60,19 @@ public class Attendance implements Serializable{
 		this.attendanceStatus = attendanceStatus;
 	}
 
+
 	@Override
 	public String toString() {
-		return "Attendance [attendanceId=" + attendanceId + ", empId=" + empId + ", attendanceDate=" + attendanceDate
-				+ ", attendanceStatus=" + attendanceStatus + "]";
+	    return String.format(
+	        "Attendance [attendanceId=%d, empId=%d, attendanceDate=%s, attendanceStatus=%s]",
+	        attendanceId,
+	        empId,
+	        attendanceDate,
+	        attendanceStatus
+	    );
 	}
+	
+
 	
 
 }

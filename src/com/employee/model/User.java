@@ -62,4 +62,18 @@ public class User implements Serializable {
 		this.lastLogin = lastLogin;
 	}
 
+	
+	@Override
+	public String toString() {
+	    return "User {" +
+	           "\n  User ID       : " + userId +
+	           "\n  User Name     : " + userName +
+	           "\n  Password Hash : " + passwordHash +
+	           "\n  Role          : " + role +
+	           "\n  Last Login    : " + lastLogin +
+	           "\n}";
+	}
+
+	
+
 }

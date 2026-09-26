@@ -15,7 +15,7 @@ public class DBConnection {
 	public static boolean loadDriverClass()  throws DatabaseException{
 
 		try {
-			Class.forName("com.mysql.jdbc.Driver");
+			Class.forName("com.mysql.cj.jdbc.Driver");
 			return true;
 		} catch (Exception e) {
 			throw new DatabaseException("Driver Is Not Lood..!");

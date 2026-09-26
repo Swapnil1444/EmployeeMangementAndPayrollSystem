@@ -45,4 +45,17 @@ public class Deparment {
 		this.dept_Desc = dept_Desc;
 	}
 
+	
+	@Override
+	public String toString() {
+	    return "Department {" +
+	           "\n  Department ID          : " + dept_Id +
+	           "\n  Department Name        : " + dept_Name +
+	           "\n  Department Description : " + dept_Desc +
+	           "\n}";
+	}
+
+	
+	
+
 }

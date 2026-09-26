@@ -6,7 +6,7 @@ public class Constants {
 	}
 
 	// DATABASE
-	public static final String DB_URL = "jdbc:mysql://localhost:3306/EmployeePayrollSystem";
+	public static final String DB_URL = "jdbc:mysql://localhost:3306/employee_payroll_db";
 	public static final String DB_USER = "root";
 	public static final String DB_PASSWORD = "9309";
 
