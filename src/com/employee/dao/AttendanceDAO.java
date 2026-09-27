@@ -5,51 +5,120 @@ import java.sql.Date;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Timestamp;
+import java.time.LocalDate;
+import java.util.ArrayList;
+import java.util.List;
 
 import com.employee.exception.DatabaseException;
 import com.employee.model.Attendance;
+import com.employee.model.AttendanceStatus;
 import com.employee.util.DBConnection;
 
 public class AttendanceDAO {
 
 	public int insert(Attendance attendance) {
-		String sql="insert into attendance(employee_id,attendance_date,status) values(?,?,?)";
-		try  (Connection con=DBConnection.getConnections();
-			PreparedStatement	ps=con.prepareStatement(sql);){
+		String sql = "insert into attendance(employee_id,attendance_date,status) values(?,?,?)";
+		try (Connection con = DBConnection.getConnections(); PreparedStatement ps = con.prepareStatement(sql);) {
 			ps.setInt(1, attendance.getEmpId());
-			ps.setDate(2,Date.valueOf(attendance.getAttendanceDate()));
+			ps.setDate(2, Date.valueOf(attendance.getAttendanceDate()));
 			ps.setString(3, attendance.getAttendanceStatus().name());
 			ps.executeUpdate();
-			try(ResultSet rsResultSet=ps.getGeneratedKeys()){
-				if(rsResultSet.next()) {
+			try (ResultSet rsResultSet = ps.getGeneratedKeys()) {
+				if (rsResultSet.next()) {
 					return rsResultSet.getInt(1);
 				}
 			}
 			return -1;
-			
+
 		} catch (SQLException e) {
-		throw new DatabaseException("Error inserting attendance:"+e.getMessage());
+			throw new DatabaseException("Error inserting attendance:" + e.getMessage());
 		}
 	}
 
 	public boolean update(Attendance att) {
-		
-		String sql="update attendance set status =? where employee_id=? attendance_date=?";
-		try (Connection con=DBConnection.getConnections();
-			PreparedStatement	ps=con.prepareStatement(sql);){
-			ps.setString(1,att.getAttendanceStatus().name());
+
+		String sql = "update attendance set status =? where employee_id=? attendance_date=?";
+		try (Connection con = DBConnection.getConnections(); PreparedStatement ps = con.prepareStatement(sql);) {
+			ps.setString(1, att.getAttendanceStatus().name());
 			ps.setInt(2, att.getEmpId());
 			ps.setDate(3, Date.valueOf(att.getAttendanceDate()));
-			return ps.executeUpdate()>0;
-			
-			
+			return ps.executeUpdate() > 0;
+
 		} catch (Exception e) {
-			throw new DatabaseException("Error update attendance :"+e.getMessage());
+			throw new DatabaseException("Error update attendance :" + e.getMessage());
 		}
 	}
+
+	public Attendance findByEmployeeIdAndDate(int empId, LocalDate date) {
+		String sql = "select * from attendance where employee_id=? and attendance_date=?";
+		try (Connection con = DBConnection.getConnections(); PreparedStatement ps = con.prepareStatement(sql);) {
+			ps.setInt(1, empId);
+			ps.setDate(2, Date.valueOf(date));
+			try (ResultSet rs = ps.executeQuery()) {
+				if (rs.next()) {
+					return mapRow(rs);
+				}
+				return null;
+			}
+		} catch (SQLException e) {
+			throw new DatabaseException("Error finding attendance records:" + e.getMessage());
+		}
+	}
+
+	public List<Attendance> findByDate(LocalDate date) {
+		List<Attendance> list = new ArrayList<Attendance>();
+		String sql = "select * from attendance where attendance_date=? order by employee_id";
+		try (Connection con = DBConnection.getConnections(); PreparedStatement ps = con.prepareStatement(sql);) {
+			ps.setDate(1, Date.valueOf(date));
+			try (ResultSet rs = ps.executeQuery()) {
+				while (rs.next()) {
+					list.add(mapRow(rs));
+				}
+			}
+
+		} catch (SQLException e) {
+			throw new DatabaseException("Error finding attendanece by date:" + e.getMessage());
+		}
+		return list;
+	}
 	
-	
-	
-	
-	
+	public List<Attendance> findByEmployee(int empId){
+        String sql = "SELECT * FROM attendance WHERE employee_id = ? ORDER BY attendance_date";
+		return queryList(sql,empId,null);
+	}
+	 public List<Attendance> findByEmployeeAndMonth(int employeeId, String yearMonth) {
+	        String sql = "SELECT * FROM attendance WHERE employee_id = ? " +
+	                "AND DATE_FORMAT(attendance_date, '%Y-%m') = ? ORDER BY attendance_date";
+	        return queryList(sql, employeeId, yearMonth);
+	    }
+
+
+	private List<Attendance> queryList(String sql, int empId, String yearMonth) {
+		List<Attendance> list= new ArrayList<Attendance>();
+		try(Connection con =DBConnection.getConnections();
+		PreparedStatement	ps=con.prepareStatement(sql);	){
+			ps.setInt(1, empId);
+			if(yearMonth!=null) {
+				ps.setString(2, yearMonth);
+			}
+			try(ResultSet rs=ps.executeQuery()){
+				while(rs.next()) {
+					list.add(mapRow(rs));
+				}
+			}
+			
+		} catch (SQLException e) {
+			throw new DatabaseException("Error fatching attendance:"+e.getMessage());
+		}
+		return list;
+	}
+
+	private Attendance mapRow(ResultSet rs) throws SQLException {
+
+		return new Attendance(rs.getInt("attendance_id"), rs.getInt("employee_id"),
+				rs.getDate("attendance_date").toLocalDate(), AttendanceStatus.valueOf(rs.getString("status")));
+	}
+
+
 }

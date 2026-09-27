@@ -9,7 +9,7 @@ public class Employee {
 	private String firstName;
 	private String lastName;
 	private String email;
-	private long phoneNo;
+	private String phoneNo;
 	private	String address;
 	private Gender gender;
 	private Deparment dept;
@@ -18,7 +18,7 @@ public class Employee {
 	private double baseSalary;
 	private EmployeeStatus empStatus;
 
-	public Employee(String firstName, String lastName, String email, long phoneNo, String address, Gender gender,
+	public Employee(String firstName, String lastName, String email, String phoneNo, String address, Gender gender,
 			Deparment dept, String destination, LocalDate joinDate, double baseSalary, EmployeeStatus empStatus) {
 		this.firstName = firstName;
 		this.lastName = lastName;
@@ -33,13 +33,17 @@ public class Employee {
 		this.empStatus = empStatus.active;
 	}
 
-	public Employee(int empId, String firstName, String lastName, String email, long phoneNo, String address,
+	public Employee(int empId, String firstName, String lastName, String email, String phoneNo, String address,
 			Gender gender, Deparment dept, String destination, LocalDate joinDate, double baseSalary,
 			EmployeeStatus empStatus) {
 
 		this(firstName, lastName, email, phoneNo, address, gender, dept, destination, joinDate, baseSalary, empStatus);
 		this.empId = empId;
 		this.empStatus = empStatus;
+	}
+
+	public Employee() {
+		// TODO Auto-generated constructor stub
 	}
 
 	public EmployeeStatus getEmpStatus() {
@@ -82,11 +86,11 @@ public class Employee {
 		this.email = email;
 	}
 
-	public long getPhoneNo() {
+	public String getPhoneNo() {
 		return phoneNo;
 	}
 
-	public void setPhoneNo(long phoneNo) {
+	public void setPhoneNo(String phoneNo) {
 		this.phoneNo = phoneNo;
 	}
 

@@ -112,17 +112,6 @@ public class DepartmentDAO {
 		return new Deparment(rs.getInt("department_id"), rs.getString("department_name"), rs.getString("description"));
 	}
 
-//	public static void main(String[] args) {
-//		DepartmentDAO d = new DepartmentDAO();
-//		// System.out.println(d.findById(1));
-//		System.out.println(d.findAll());
-//		// System.out.println(d.searchByName("e"));
-//		Deparment d1 = new Deparment("AIDS", "crateing the ai and chat boots in this aids");
-//		Deparment d2 = new Deparment(4, "CA", "handling all finacilay deparment");
-//		// System.out.println( d.update(d2));
-//		// System.out.println(d.insert(d1));
-//		//System.out.println(d.delete(4));
-//
-//	}
+
 
 }

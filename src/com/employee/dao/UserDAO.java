@@ -79,18 +79,6 @@ public class UserDAO {
 		return u;
 	}
 
-//	public static void main(String[] args) {
-//		UserDAO u = new UserDAO();
-//		//yyyy-mm-dd hh:mm:ss
-//		//u.updateLastLogin(1, LocalDateTime.now());
-//		
-//		User u1=new User();
-//		u1.setUserName("jay123");
-//		u1.setPasswordHash(PasswordUtil.hash("jay123"));
-//		u1.setRole("Admin");
-//		//System.out.println(u.insert(u1));
-//		System.out.println(u.findByUserName("jay123"));
-//
-//	}
+
 
 }
