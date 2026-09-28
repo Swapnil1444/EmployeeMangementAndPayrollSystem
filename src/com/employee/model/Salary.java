@@ -238,12 +238,21 @@ public class Salary implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Salary [salaryId=" + salaryId + ", employeeId=" + employeeId + ", basicSalary=" + basicSalary + ", hra="
-				+ hra + ", da=" + da + ", allowance=" + allowance + ", pf=" + pf + ", professionalTex="
-				+ professionalTex + ", otherDeduction=" + otherDeduction + ", grossSalary=" + grossSalary
-				+ ", totalDeduction=" + totalDeduction + ", netSalary=" + netSalary + ", payrollMonth=" + payrollMonth
-				+ "]";
+	    return "Salary {" +
+	           "\n  Salary ID         : " + salaryId +
+	           "\n  Employee ID       : " + employeeId +
+	           "\n  Basic Salary      : " + basicSalary +
+	           "\n  HRA               : " + hra +
+	           "\n  DA                : " + da +
+	           "\n  Allowance         : " + allowance +
+	           "\n  PF                : " + pf +
+	           "\n  Professional Tax  : " + professionalTex +
+	           "\n  Other Deduction   : " + otherDeduction +
+	           "\n  Gross Salary      : " + grossSalary +
+	           "\n  Total Deduction   : " + totalDeduction +
+	           "\n  Net Salary        : " + netSalary +
+	           "\n  Payroll Month     : " + payrollMonth +
+	           "\n}";
 	}
-	
-	
+
 }

@@ -106,11 +106,18 @@ public class Payroll implements Serializable{
 
 	@Override
 	public String toString() {
-		return "Payroll [payrollId=" + payrollId + ", employeeId=" + employeeId + ", payrollMonth=" + payrollMonth
-				+ ", presentDays=" + presentDays + ", absentDays=" + absentDays + ", leaveDays=" + leaveDays
-				+ ", netSalary=" + netSalary + ", processedOn=" + processedOn + ", status=" + status + "]";
+	    return "Payroll {" +
+	           "\n  Payroll ID     : " + payrollId +
+	           "\n  Employee ID    : " + employeeId +
+	           "\n  Payroll Month  : " + payrollMonth +
+	           "\n  Present Days   : " + presentDays +
+	           "\n  Absent Days    : " + absentDays +
+	           "\n  Leave Days     : " + leaveDays +
+	           "\n  Net Salary     : " + netSalary +
+	           "\n  Processed On   : " + processedOn +
+	           "\n  Status         : " + status +
+	           "\n}";
 	}
-	
 	
 
 	
