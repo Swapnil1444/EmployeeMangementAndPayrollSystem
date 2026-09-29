@@ -1,6 +1,7 @@
 package com.employee.util;
 
 import java.time.LocalDate;
+import java.time.LocalDateTime;
 import java.time.Month;
 import java.time.YearMonth;
 import java.time.format.DateTimeFormatter;
@@ -22,8 +23,8 @@ public class DateUtil {
 		return date == null ? "" : date.format(DATE_FORMAT);
 	}
 
-	public static String formatDateTime(LocalDate dateTime) {
-		return dateTime == null ? "" : dateTime.format(DATE_TIME_FORMAT);
+	public static String formatDateTime(LocalDateTime localDateTime) {
+		return localDateTime == null ? "" : localDateTime.format(DATE_TIME_FORMAT);
 	}
 
 	public static String currentPayrollMonth() {
