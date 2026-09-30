@@ -3,7 +3,7 @@ package com.employee.model;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Employee {
+public class Employee implements Comparable<Employee>{
 
 	private int empId;
 	private String firstName;
@@ -171,6 +171,17 @@ public class Employee {
 	           "\n  Base Salary     : " + baseSalary +
 	           "\n  Employee Status : " + empStatus +
 	           "\n}";
+	}
+
+	@Override
+	public int compareTo(Employee o) {
+	if(this.getEmpId()>o.getEmpId()) {
+		return 1;
+	}else if(this.getEmpId()<o.getEmpId()) {
+		return -1;
+	}else {
+		return 0;
+	}
 	}
 
 	

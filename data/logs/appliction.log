@@ -1,3 +1,5 @@
 [29-09-2026 15:38:27][INFO]test line
 [29-09-2026 15:51:14][INFO]Successful login for username: admin
 [29-09-2026 19:52:56][INFO]Deparment delete attempt id:5 success=true
+[29-09-2026 23:29:29][INFO]Attendance marked: employee=2 date=2026-09-29 status=Leave
+[30-09-2026 15:34:55][INFO]Employee added: Swapnil supekar (id=3)

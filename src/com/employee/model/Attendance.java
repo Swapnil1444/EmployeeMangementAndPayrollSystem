@@ -64,14 +64,19 @@ public class Attendance implements Serializable{
 	@Override
 	public String toString() {
 	    return String.format(
-	        "Attendance [attendanceId=%d, empId=%d, attendanceDate=%s, attendanceStatus=%s]",
+	        "Attendance {" +
+	        "\n  Attendance ID     : %d" +
+	        "\n  Employee ID       : %d" +
+	        "\n  Attendance Date   : %s" +
+	        "\n  Attendance Status : %s" +
+	        "\n}",
 	        attendanceId,
 	        empId,
 	        attendanceDate,
 	        attendanceStatus
 	    );
 	}
-	
+
 
 	
 

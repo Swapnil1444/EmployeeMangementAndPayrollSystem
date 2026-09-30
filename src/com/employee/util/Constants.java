@@ -5,6 +5,8 @@ public class Constants {
 	private Constants() {
 	}
 
+	//mvn 
+	
 	// DATABASE
 	public static final String DB_URL = "jdbc:mysql://localhost:3306/employee_payroll_db";
 	public static final String DB_USER = "root";
@@ -26,10 +28,10 @@ public class Constants {
 	public static final int MAX_LOGIN_ATTEMENT = 3;
 
 	// EMAIL
-	public static final String SMTP_HOST = "";
+	public static final String SMTP_HOST = "smtp.gmail.com";
 	public static final String SMTP_PORT = "587";
-	public static final String EMAIL_FROM = "";
-	public static final String EMAIL_PASSWORD = "";
+	public static final String EMAIL_FROM = "swpnilsupekar@gmail.com";
+	public static final String EMAIL_PASSWORD = "yrzm wcky lzyz wlla"; //APP PASSWORD
 
 	// COMPANY NAME
 	public static final String COMPANY_NAME = "Employee Payroll Pvt Ltd.";

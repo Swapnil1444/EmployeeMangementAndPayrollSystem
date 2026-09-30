@@ -110,9 +110,16 @@ ON DUPLICATE KEY UPDATE department_name = department_name;
 select * from departments;
 select * from users;
 select * from attendance;
+desc attendance;
+
+delete from attendance where attendance_id=9;
+
+insert into attendance (employee_id,attendance_date,status) values ();
 
 insert into employees  (
     first_name,last_name ,email ,phone ,address ,gender  ,department_id,designation ,joining_date ,basic_salary ,status) values(
     "swapnil","supekar","swapnil@gmail.com","9309144435","pune","male",1,"hr",'2026-06-28',200000,"ACTIVE");
 
 select *  from employees;
+select * from payroll;
+select * from salary;

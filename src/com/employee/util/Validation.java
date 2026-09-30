@@ -17,7 +17,7 @@ public class Validation {
 
 	public static void validEmail(String email)  {
 		requireNonBlank(email,"Email");
-		if (!(Pattern.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,}$", email))) {
+		if ((Pattern.matches("^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\\\\.[a-zA-Z]{2,}$", email))) {
 			throw new InvalidInputException("Invalid Email:"+email);
 		}
 	}
@@ -38,9 +38,9 @@ public class Validation {
 		}
 	}
 
-	public static void validPositivNo(int no)  {
+	public static void validPositivNo(double no,String value)  {
 		if (no <= 0) {
-			throw new InvalidInputException("must be greater than zero..!");
+			throw new InvalidInputException(value+" must be greater than zero..!");
 		}
 	}
 
