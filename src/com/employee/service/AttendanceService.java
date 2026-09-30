@@ -20,11 +20,14 @@ public class AttendanceService {
 		}
 
 		Attendance existing = attendanceDAO.findByEmployeeIdAndDate(empId, date);
+		System.out.println(existing);
 		if (existing != null) {
 			throw new InvalidAttendanceException(
 					"Attendance already marked for employee " + empId + " on " + date + ". Use update instead.");
 		}
+		
 		int id = attendanceDAO.insert(new Attendance(empId, date, status));
+		System.out.println(id);
 		LogUtil.info("Attendance marked: employee=" + empId + " date=" + date + " status=" + status);
 
 		return id;
@@ -75,10 +78,13 @@ public class AttendanceService {
 		return (int) countByStatus(getAttendanceForEmployeeMonth(employeeId, yearMonth), AttendanceStatus.halfDay);
 	}
 
-//	public static void main(String[] args) {
-//		
-//		AttendanceService attendanceService=new AttendanceService();
-//		attendanceService.markAttendance(3,LocalDate.of(2026,8,01), AttendanceStatus.present);
-//	}
+	public static void main(String[] args) {
+		
+		AttendanceService attendanceService=new AttendanceService();
+		//System.out.println(attendanceService.updateAttendace(4,LocalDate.of(2026,8,02), AttendanceStatus.absent));
+		
+		//System.out.println(attendanceService.countPresentDays(3, "2026-09"));
+		
+	}
 
 }

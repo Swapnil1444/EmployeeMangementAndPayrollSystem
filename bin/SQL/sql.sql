@@ -5,6 +5,7 @@
 CREATE DATABASE IF NOT EXISTS employee_payroll_db;
 USE employee_payroll_db;
 
+
 -- 1. users (admin login)
 CREATE TABLE IF NOT EXISTS users (
     user_id       INT AUTO_INCREMENT PRIMARY KEY,

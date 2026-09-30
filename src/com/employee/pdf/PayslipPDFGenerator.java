@@ -3,6 +3,7 @@ package com.employee.pdf;
 import java.io.File;
 import java.io.FileOutputStream;
 import java.time.LocalDate;
+import java.time.LocalTime;
 
 import com.employee.file.LogUtil;
 import com.employee.model.Deparment;
@@ -94,7 +95,7 @@ public class PayslipPDFGenerator {
 	            document.add(totalsTable);
 
 	            document.add(new Paragraph(" "));
-	            document.add(new Paragraph("Generated Date: " + DateUtil.formatDate(LocalDate.now()), normalFont));
+	            document.add(new Paragraph("Generated Date: " +DateUtil.formatDate(LocalDate.now()), normalFont));
 
 	            Paragraph signature = new Paragraph("\n\nAuthorized Signature: ______________________", normalFont);
 	            signature.setSpacingBefore(30);
@@ -127,12 +128,6 @@ public class PayslipPDFGenerator {
 	        return cell;
 	    }
 	    
-	    public static void main(String[] args) {
-			PayslipPDFGenerator generator=new PayslipPDFGenerator();
-			Deparment dept =new Deparment(1, "javaDevlapr", "java devlapar in full time");
-			Salary salary=new Salary(1, 2000000, 1000, 777, "2026-09");
-			Employee e =new Employee(1, "swapnil", "Supekar","swapnilsupekar9309@gmail.com", "9309144435", "pune", Gender.male, dept ,  "java devlapar", LocalDate.now(), 200000, EmployeeStatus.active);
-			System.out.println(generator.generatePayslipPdf(e,salary,"SwapnilSupekar"));
-		}
+	   
 	}
 

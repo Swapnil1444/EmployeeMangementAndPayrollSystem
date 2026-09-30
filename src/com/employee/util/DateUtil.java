@@ -11,7 +11,7 @@ import java.time.temporal.ChronoUnit;
 
 public class DateUtil {
 
-	private static final DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern("dd-mm-yyyy");
+	private static final DateTimeFormatter DATE_FORMAT = DateTimeFormatter.ofPattern("dd-MM-yyyy");
 	private static final DateTimeFormatter DATE_TIME_FORMAT = DateTimeFormatter.ofPattern("dd-MM-yyyy HH:mm:ss");
 	private static final DateTimeFormatter MONTH_FORMAT = DateTimeFormatter.ofPattern("yyyy-MM");
 
@@ -49,4 +49,8 @@ public class DateUtil {
 	public static double dayBetween(LocalDate start ,LocalDate end) {
 		return ChronoUnit.DAYS.between(start, end);
 	}
+	
+//	public static void main(String[] args) {
+//		System.out.println(DateUtil.formatDate(LocalDate.now()));
+//	}
 }

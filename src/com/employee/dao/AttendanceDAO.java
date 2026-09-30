@@ -24,7 +24,8 @@ public class AttendanceDAO {
 
 	public int insert(Attendance attendance) {
 		String sql = "INSERT INTO attendance (employee_id, attendance_date, status) VALUES (?, ?, ?)";
-		try (Connection con = DBConnection.getConnections(); PreparedStatement ps = con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS)) {
+		try (Connection con = DBConnection.getConnections();
+				PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
 			ps.setInt(1, attendance.getEmpId());
 			ps.setDate(2, Date.valueOf(attendance.getAttendanceDate()));
 			ps.setString(3, attendance.getAttendanceStatus().name());
@@ -101,12 +102,11 @@ public class AttendanceDAO {
 
 	private List<Attendance> queryList(String sql, int empId, String yearMonth) {
 		List<Attendance> list = new ArrayList<Attendance>();
-		try (Connection con = DBConnection.getConnections();
-				PreparedStatement ps = con.prepareStatement(sql);) {
+		try (Connection con = DBConnection.getConnections(); PreparedStatement ps = con.prepareStatement(sql)) {
 			ps.setInt(1, empId);
 			if (yearMonth != null) {
 				ps.setString(2, yearMonth);
-			}   
+			}
 			try (ResultSet rs = ps.executeQuery()) {
 				while (rs.next()) {
 					list.add(mapRow(rs));
@@ -124,13 +124,20 @@ public class AttendanceDAO {
 		return new Attendance(rs.getInt("attendance_id"), rs.getInt("employee_id"),
 				rs.getDate("attendance_date").toLocalDate(), AttendanceStatus.valueOf(rs.getString("status")));
 	}
-	
+
 //	public static void main(String[] args) {
-//		AttendanceDAO a=new AttendanceDAO();
+//		AttendanceDAO a = new AttendanceDAO();
+//
+//		Attendance a1 = new Attendance(4, LocalDate.now(), AttendanceStatus.present);
+//		// a.insert(a1);
+//
+//		// System.out.println(a.findByEmployeeAndMonth(3, "2026-09"));
+//		System.out.println("------------------------------");
+//		//System.out.println(a.findByEmployee(3));
+//
+//		//System.out.println(a.findByDate(LocalDate.of(2026, 9, 02)));
+//		//System.out.println(a.findByEmployeeIdAndDate(3, LocalDate.of(2026, 9, 04)));
 //		
-//		Attendance a1=new Attendance(1,LocalDate.now(),AttendanceStatus.present);
-////		a.insert(a1);
-//		System.out.println(a.findByEmployeeAndMonth(3, "2026-09"));
 //	}
 
 }

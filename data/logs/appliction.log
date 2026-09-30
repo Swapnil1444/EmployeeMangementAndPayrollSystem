@@ -8,3 +8,19 @@
 [30-09-2026 19:58:36][ERROR]Backup failed: data\backup (Access is denied)
 [30-09-2026 22:34:31][ERROR]Failed to generate PDF payslip: Unsupported field: MinuteOfHour
 [30-09-2026 22:56:32][ERROR]Failed to generate PDF payslip: Unsupported field: MinuteOfHour
+[30-09-2026 23:16:03][ERROR]Failed to generate PDF payslip: Unsupported field: MinuteOfHour
+[30-09-2026 23:19:06][INFO]PDF payslip generated: data\repors\SwapnilSupekar
+[30-09-2026 23:30:17][INFO]PDF payslip generated: data\repors\SwapnilSupekar
+[30-09-2026 23:34:13][INFO]PDF payslip generated: data\repors\SwapnilSupekar.pdf
+[30-09-2026 23:38:39][INFO]PDF payslip generated: data\repors\Swapnil.pdf
+[30-09-2026 23:38:46][ERROR]Failed to send payslip email to swapnilsupekar9309@gmail.com: IOException while sending message
+[30-09-2026 23:43:11][INFO]PDF payslip generated: data\repors\Swapnil.pdf
+[30-09-2026 23:43:18][ERROR]Failed to send payslip email to swapnilsupekar9309@gmail.com: IOException while sending message
+[01-10-2026 00:06:03][INFO]PDF payslip generated: data\repors\Swapnil.pdf
+[01-10-2026 00:11:25][INFO]PDF payslip generated: data\repors\Swapnil.pdf
+[01-10-2026 00:11:32][ERROR]Failed to send payslip email to swapnilsupekar9309@gmail.com: IOException while sending message
+[01-10-2026 00:14:58][INFO]PDF payslip generated: data\repors\Swapnil.pdf
+[01-10-2026 00:15:06][INFO]Payslip emailed to swapnilsupekar9309@gmail.com for month 2026-09
+[01-10-2026 00:21:43][INFO]Employee added: swapnil Supekar (id=4)
+[01-10-2026 00:44:58][INFO]Attendance marked: employee=3 date=2026-08-01 status=present
+[01-10-2026 00:47:22][INFO]Attendance marked: employee=4 date=2026-08-02 status=present
