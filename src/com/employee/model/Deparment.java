@@ -1,6 +1,8 @@
 package com.employee.model;
 
-public class Deparment {
+import java.io.Serializable;
+
+public class Deparment implements Serializable {
 
 	private int dept_Id;
 	private String dept_Name;

@@ -75,10 +75,10 @@ public class AttendanceService {
 		return (int) countByStatus(getAttendanceForEmployeeMonth(employeeId, yearMonth), AttendanceStatus.halfDay);
 	}
 
-	public static void main(String[] args) {
-		
-		AttendanceService attendanceService=new AttendanceService();
-		attendanceService.markAttendance(3,LocalDate.of(2026,9,01), AttendanceStatus.present);
-	}
+//	public static void main(String[] args) {
+//		
+//		AttendanceService attendanceService=new AttendanceService();
+//		attendanceService.markAttendance(3,LocalDate.of(2026,8,01), AttendanceStatus.present);
+//	}
 
 }

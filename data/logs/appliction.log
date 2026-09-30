@@ -3,3 +3,8 @@
 [29-09-2026 19:52:56][INFO]Deparment delete attempt id:5 success=true
 [29-09-2026 23:29:29][INFO]Attendance marked: employee=2 date=2026-09-29 status=Leave
 [30-09-2026 15:34:55][INFO]Employee added: Swapnil supekar (id=3)
+[30-09-2026 19:53:44][ERROR]Backup failed: com.employee.file.AppBackup
+[30-09-2026 19:57:00][ERROR]Backup failed: com.employee.file.AppBackup
+[30-09-2026 19:58:36][ERROR]Backup failed: data\backup (Access is denied)
+[30-09-2026 22:34:31][ERROR]Failed to generate PDF payslip: Unsupported field: MinuteOfHour
+[30-09-2026 22:56:32][ERROR]Failed to generate PDF payslip: Unsupported field: MinuteOfHour

@@ -1,5 +1,7 @@
 package com.employee.service;
 
+import java.util.List;
+
 import com.employee.dao.PayrollDAO;
 import com.employee.file.LogUtil;
 import com.employee.model.Employee;
@@ -42,10 +44,32 @@ public class PayrollService {
 	}
 	
 	
-	public static void main(String[] args) {
-		PayrollService payrollService=new PayrollService();
-		System.out.println(payrollService.processPayroll(3,"2026-09" , 200000, 49999));
+	public Payroll getPayroll(int empId,String payrollMonth) {
+		return payrollDAO.findByEmployeeAndMonth(empId, payrollMonth);
 	}
+	
+	public Salary getSalaryBreakdown(int employeeId, String payrollMonth) {
+        return payrollDAO.findSalary(employeeId, payrollMonth);
+    }
+	
+	public List<Payroll> getPayrollHistory(int employeeId) {
+        return payrollDAO.findByEmployee(employeeId);
+    }
+	
+	public List<Payroll> getMonthlyPayrollReport(String payrollMonth) {
+        return payrollDAO.findByMonth(payrollMonth);
+    }
+	
+	public void markStatus(int payrollId, String status) {
+        payrollDAO.updateStatus(payrollId, status);
+    }
+//	public static void main(String[] args) {
+//		PayrollService payrollService=new PayrollService();
+//		//System.out.println(payrollService.processPayroll(3,"2026-09" , 200000, 49999));
+//		//System.out.println(payrollService.getSalaryBreakdown(3, "2026-09"));
+//		//System.out.println(payrollService.getPayrollHistory(3));
+//		
+//	}
 	
 	
 

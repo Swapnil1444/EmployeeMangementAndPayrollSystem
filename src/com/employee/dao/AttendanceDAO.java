@@ -101,11 +101,12 @@ public class AttendanceDAO {
 
 	private List<Attendance> queryList(String sql, int empId, String yearMonth) {
 		List<Attendance> list = new ArrayList<Attendance>();
-		try (Connection con = DBConnection.getConnections(); PreparedStatement ps = con.prepareStatement(sql);) {
+		try (Connection con = DBConnection.getConnections();
+				PreparedStatement ps = con.prepareStatement(sql);) {
 			ps.setInt(1, empId);
 			if (yearMonth != null) {
 				ps.setString(2, yearMonth);
-			}
+			}   
 			try (ResultSet rs = ps.executeQuery()) {
 				while (rs.next()) {
 					list.add(mapRow(rs));
@@ -128,7 +129,8 @@ public class AttendanceDAO {
 //		AttendanceDAO a=new AttendanceDAO();
 //		
 //		Attendance a1=new Attendance(1,LocalDate.now(),AttendanceStatus.present);
-//		a.insert(a1);
+////		a.insert(a1);
+//		System.out.println(a.findByEmployeeAndMonth(3, "2026-09"));
 //	}
 
 }

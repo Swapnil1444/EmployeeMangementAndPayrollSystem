@@ -113,8 +113,14 @@ select * from attendance;
 desc attendance;
 
 delete from attendance where attendance_id=9;
+SELECT *
+FROM attendance
+WHERE emp_id = ?
+  AND MONTH(attendance_date) = ?
+  AND YEAR(attendance_date) = ?
+ORDER BY attendance_date ASC;
 
-insert into attendance (employee_id,attendance_date,status) values ();
+insert into attendance (employee_id,attendance_date,status) values (3,'2026-09-26','absent');
 
 insert into employees  (
     first_name,last_name ,email ,phone ,address ,gender  ,department_id,designation ,joining_date ,basic_salary ,status) values(

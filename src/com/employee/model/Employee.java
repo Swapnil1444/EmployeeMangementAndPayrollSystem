@@ -1,9 +1,10 @@
 package com.employee.model;
 
+import java.io.Serializable;
 import java.time.LocalDate;
 import java.time.Period;
 
-public class Employee implements Comparable<Employee>{
+public class Employee implements Comparable<Employee> ,Serializable{
 
 	private int empId;
 	private String firstName;
