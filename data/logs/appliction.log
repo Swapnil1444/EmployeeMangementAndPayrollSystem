@@ -24,3 +24,63 @@
 [01-10-2026 00:21:43][INFO]Employee added: swapnil Supekar (id=4)
 [01-10-2026 00:44:58][INFO]Attendance marked: employee=3 date=2026-08-01 status=present
 [01-10-2026 00:47:22][INFO]Attendance marked: employee=4 date=2026-08-02 status=present
+[01-10-2026 16:00:56][INFO]Attendance marked: employee=3 date=2026-09-30 status=present
+[01-10-2026 16:11:58][INFO]Attendance marked: employee=3 date=2026-08-30 status=present
+[01-10-2026 16:41:59][INFO]Attendance marked: employee=3 date=2026-08-07 status=present
+[01-10-2026 16:52:56][INFO]Successful login for username: admin
+[01-10-2026 17:00:14][WARN]Failed login attempt #1 for username: ww
+[01-10-2026 17:00:28][WARN]Failed login attempt #2 for username: e
+[01-10-2026 17:00:40][INFO]Successful login for username: admin
+[01-10-2026 21:07:03][INFO]Application started.
+[01-10-2026 21:07:23][INFO]Successful login for username: admin
+[01-10-2026 21:08:38][INFO]Application started.
+[01-10-2026 21:08:45][INFO]Successful login for username: admin
+[01-10-2026 21:09:50][INFO]Application started.
+[01-10-2026 21:09:57][INFO]Successful login for username: admin
+[01-10-2026 21:10:19][WARN]Failed login attempt #1 for username: h
+[01-10-2026 21:10:24][WARN]Failed login attempt #2 for username: dd
+[01-10-2026 21:10:28][WARN]Failed login attempt #3 for username: t
+[01-10-2026 21:10:28][INFO]Application exited.
+[01-10-2026 21:11:21][INFO]Application started.
+[01-10-2026 21:11:32][INFO]Successful login for username: admin
+[01-10-2026 21:11:37][WARN]Failed login attempt #1 for username: jj
+[01-10-2026 21:11:38][WARN]Failed login attempt #2 for username: hh
+[01-10-2026 21:11:40][WARN]Failed login attempt #3 for username: h
+[01-10-2026 21:11:40][INFO]Application exited.
+[01-10-2026 21:15:43][INFO]Application started.
+[01-10-2026 21:15:52][INFO]Successful login for username: admin
+[01-10-2026 21:15:52][ERROR]Unexpected error in main menu: Expected a whole number but got: ''
+[01-10-2026 21:16:40][INFO]User logged out: admin
+[01-10-2026 21:16:51][WARN]Failed login attempt #1 for username: 0
+[01-10-2026 21:16:53][WARN]Failed login attempt #2 for username: t
+[01-10-2026 21:17:00][INFO]Successful login for username: admin
+[01-10-2026 21:17:00][ERROR]Unexpected error in main menu: Expected a whole number but got: ''
+[01-10-2026 21:17:03][INFO]User logged out: admin
+[01-10-2026 21:21:30][INFO]Application started.
+[01-10-2026 21:21:38][INFO]Successful login for username: admin
+[01-10-2026 21:21:38][ERROR]Unexpected error in main menu: Expected a whole number but got: ''
+[01-10-2026 21:22:45][INFO]Application started.
+[01-10-2026 21:22:53][INFO]Successful login for username: admin
+[01-10-2026 21:22:53][ERROR]Unexpected error in main menu: Expected a whole number but got: ''
+[01-10-2026 21:24:41][INFO]Application started.
+[01-10-2026 21:24:49][INFO]Successful login for username: admin
+[01-10-2026 21:24:49][ERROR]Unexpected error in main menu: Expected a whole number but got: ''
+[01-10-2026 21:26:23][INFO]Application started.
+[01-10-2026 21:26:30][INFO]Successful login for username: admin
+[01-10-2026 21:27:51][INFO]Application started.
+[01-10-2026 21:27:58][INFO]Successful login for username: admin
+[01-10-2026 21:30:48][INFO]Application started.
+[01-10-2026 22:58:19][INFO]Deparmenat add:hr (id:15)
+[01-10-2026 22:59:17][INFO]Deparment update attempt id=15success=true
+[01-10-2026 23:00:00][INFO]Deparment delete attempt id:13 success=true
+[01-10-2026 23:00:05][INFO]Deparment delete attempt id:12 success=true
+[01-10-2026 23:00:11][INFO]Deparment delete attempt id:0 success=false
+[01-10-2026 23:00:26][INFO]Deparment delete attempt id:14 success=true
+[01-10-2026 23:14:11][INFO]Application started.
+[01-10-2026 23:14:20][INFO]Successful login for username: admin
+[01-10-2026 23:26:09][INFO]Employee added: prachi shedage (id=6)
+[01-10-2026 23:30:17][INFO]Employee deleted: id=4
+[01-10-2026 23:49:49][INFO]Employee updated: id=6
+[01-10-2026 23:51:01][INFO]Exported 2 employees to data\employee\employees_1790878861616.csv
+[01-10-2026 23:52:40][INFO]Application started.
+[01-10-2026 23:52:50][INFO]Successful login for username: admin

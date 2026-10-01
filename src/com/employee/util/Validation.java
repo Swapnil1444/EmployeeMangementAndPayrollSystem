@@ -30,7 +30,7 @@ public class Validation {
 	}
 
 	public static void validSalary(double salary)  {
-		if (salary <= 0) {
+		if (salary < 0) {
 			throw new InvalidInputException("Basic salary must be greater than zero..!");
 		}
 		if (salary > 10_000_000) {

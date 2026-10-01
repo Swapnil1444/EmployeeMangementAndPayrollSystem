@@ -11,11 +11,13 @@ public class DBConnection {
 		
 	}
 	private static Connection con = null;
+	private static int num=1;
 
 	public static boolean loadDriverClass()  throws DatabaseException{
 
 		try {
 			Class.forName("com.mysql.cj.jdbc.Driver");
+			num++;
 			return true;
 		} catch (Exception e) {
 			throw new DatabaseException("Driver Is Not Lood..!");
@@ -24,20 +26,19 @@ public class DBConnection {
 
 	public static Connection getConnections() throws DatabaseException {
 
-		if (con == null) {
-			try {
-				if (loadDriverClass()) {
+		
+			try {  
+				if (num==1) {
+					  loadDriverClass();
+				  }
 					con = DriverManager.getConnection(Constants.DB_URL, Constants.DB_USER, Constants.DB_PASSWORD);
 					return con;
-				}
-
 			} catch (Exception e) {
 				throw new DatabaseException("No Connection Bilding on DataBase...!");
 
 			}
 
-		}
-		return con;
+		//return con;
 	}
 
 }

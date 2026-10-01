@@ -4,6 +4,7 @@ import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
+import java.sql.Statement;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -15,7 +16,7 @@ public class DepartmentDAO {
 
 	public int insert(Deparment dept) {
 		String sql = "insert into departments (department_name, description) values (?,?)";
-		try (Connection con = DBConnection.getConnections(); PreparedStatement ps = con.prepareStatement(sql);) {
+		try (Connection con = DBConnection.getConnections(); PreparedStatement ps = con.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);) {
 			ps.setString(1, dept.getDept_Name());
 			ps.setString(2, dept.getDept_Desc());
 			ps.executeUpdate();

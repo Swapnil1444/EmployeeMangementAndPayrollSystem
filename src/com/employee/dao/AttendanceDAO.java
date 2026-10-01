@@ -26,6 +26,7 @@ public class AttendanceDAO {
 		String sql = "INSERT INTO attendance (employee_id, attendance_date, status) VALUES (?, ?, ?)";
 		try (Connection con = DBConnection.getConnections();
 				PreparedStatement ps = con.prepareStatement(sql, Statement.RETURN_GENERATED_KEYS)) {
+			//System.out.println(con);
 			ps.setInt(1, attendance.getEmpId());
 			ps.setDate(2, Date.valueOf(attendance.getAttendanceDate()));
 			ps.setString(3, attendance.getAttendanceStatus().name());
@@ -59,6 +60,7 @@ public class AttendanceDAO {
 	public Attendance findByEmployeeIdAndDate(int empId, LocalDate date) {
 		String sql = "select * from attendance where employee_id=? and attendance_date=?";
 		try (Connection con = DBConnection.getConnections(); PreparedStatement ps = con.prepareStatement(sql);) {
+		//	System.out.println(con);
 			ps.setInt(1, empId);
 			ps.setDate(2, Date.valueOf(date));
 			try (ResultSet rs = ps.executeQuery()) {

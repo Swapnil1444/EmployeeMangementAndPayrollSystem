@@ -5,7 +5,6 @@
 CREATE DATABASE IF NOT EXISTS employee_payroll_db;
 USE employee_payroll_db;
 
-
 -- 1. users (admin login)
 CREATE TABLE IF NOT EXISTS users (
     user_id       INT AUTO_INCREMENT PRIMARY KEY,
@@ -116,10 +115,12 @@ desc attendance;
 delete from attendance where attendance_id=9;
 SELECT *
 FROM attendance
-WHERE emp_id = ?
-  AND MONTH(attendance_date) = ?
-  AND YEAR(attendance_date) = ?
+WHERE employee_id = 3
+  AND MONTH(attendance_date) = '09'
+  AND YEAR(attendance_date) = '2026'
 ORDER BY attendance_date ASC;
+
+SELECT * FROM attendance WHERE employee_id = 3 AND DATE_FORMAT(attendance_date, '%Y-%m') = '2026-09' ORDER BY attendance_date;
 
 insert into attendance (employee_id,attendance_date,status) values (3,'2026-09-26','absent');
 

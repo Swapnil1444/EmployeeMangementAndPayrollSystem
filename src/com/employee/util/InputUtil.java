@@ -15,7 +15,7 @@ public class InputUtil {
 	}
 	
 	public static String readString(String promt)  {
-		System.out.println(promt);
+		System.out.print(promt);
 		String value=sc.next();
 		if(value==null|| value.trim().isEmpty()) {
 			throw new InvalidInputException("Input cannot be Blank..!");
@@ -23,14 +23,15 @@ public class InputUtil {
 		return value.trim();
 	}
 	public static String readOptionalString(String promt)  {
-		System.out.println(promt);
+		sc.nextLine();
+		System.out.print(promt);
 		String value=sc.nextLine();
 		return value==null ? "" : value.trim();
 	}
 	
 	public static int readInt(String promt)  {
-		System.out.println(promt);
-		String value=sc.nextLine().trim();
+		System.out.print(promt);
+		String value=sc.next().trim();
 		try {
 			return Integer.parseInt(value);
 		} catch (NumberFormatException e) {
@@ -39,8 +40,8 @@ public class InputUtil {
 	}
 	
 	public static double readDouble(String promt)  {
-		System.out.println(promt);
-		String value=sc.nextLine().trim();
+		System.out.print(promt);
+		String value=sc.next().trim();
 		try {
 			return Double.parseDouble(value);
 		} catch (NumberFormatException e) {
@@ -49,8 +50,8 @@ public class InputUtil {
 	}
 	
 	public static LocalDate readDate(String promt)  {
-		System.out.println(promt+" (yyyy-MM-dd):");
-		String value=sc.nextLine().trim();
+		System.out.print(promt+" (yyyy-MM-dd):");
+		String value=sc.next().trim();
 		try {
 			return LocalDate.parse(value);
 		} catch (DateTimeParseException e) {
@@ -59,8 +60,8 @@ public class InputUtil {
 	}
 	
 	public static char readChar(String promt)  {
-		System.out.println(promt);
-		String value=sc.nextLine().trim();
+		System.out.print(promt);
+		String value=sc.next().trim();
 		if(value.length()!=1) {
 			throw new InvalidInputException("Expected  single charactar");
 		}

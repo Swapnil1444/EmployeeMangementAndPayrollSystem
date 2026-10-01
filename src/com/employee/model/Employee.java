@@ -20,7 +20,7 @@ public class Employee implements Comparable<Employee> ,Serializable{
 	private EmployeeStatus empStatus;
 
 	public Employee(String firstName, String lastName, String email, String phoneNo, String address, Gender gender,
-			Deparment dept, String destination, LocalDate joinDate, double baseSalary, EmployeeStatus empStatus) {
+			Deparment dept, String destination, LocalDate joinDate, double baseSalary) {
 		this.firstName = firstName;
 		this.lastName = lastName;
 		this.email = email;
@@ -38,7 +38,7 @@ public class Employee implements Comparable<Employee> ,Serializable{
 			Gender gender, Deparment dept, String destination, LocalDate joinDate, double baseSalary,
 			EmployeeStatus empStatus) {
 
-		this(firstName, lastName, email, phoneNo, address, gender, dept, destination, joinDate, baseSalary, empStatus);
+		this(firstName, lastName, email, phoneNo, address, gender, dept, destination, joinDate, baseSalary);
 		this.empId = empId;
 		this.empStatus = empStatus;
 	}

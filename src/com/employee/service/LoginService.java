@@ -26,7 +26,7 @@ public class LoginService {
 		return null;
 	}
 
-	private boolean isLockedOut() {
+	public boolean isLockedOut() {
 
 		return faildAttempts >= Constants.MAX_LOGIN_ATTEMENT;
 	}
