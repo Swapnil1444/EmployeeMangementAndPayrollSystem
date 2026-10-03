@@ -1,0 +1,22 @@
+========================================
+      Employee Payroll Pvt Ltd.
+           PAYSLIP - 2026-09
+========================================
+Employee ID   : 3
+Name          : Swapnil supekar
+Department    : java
+Designation   : Java Devlaper
+----------------------------------------
+Basic Salary  : 2000000.00
+HRA           : 400000.00
+DA            : 200000.00
+Allowance     : 2000.00
+Gross Salary  : 2602000.00
+----------------------------------------
+PF            : 240000.00
+Prof. Tax     : 200.00
+Other Deduct. : 700.00
+Total Deduct. : 240900.00
+----------------------------------------
+NET SALARY    : 2361100.00
+========================================

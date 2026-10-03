@@ -131,3 +131,5 @@ insert into employees  (
 select *  from employees;
 select * from payroll;
 select * from salary;
+
+update employees set email="swapnilsupekar9309@gmail.com" where employee_id=3;

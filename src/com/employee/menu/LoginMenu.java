@@ -24,18 +24,19 @@ public class LoginMenu {
 
 				
 				if (user != null) {
+		        	System.out.println("-------------------------------------");
 					System.out.println("\nLogin successful. Welcome, " + user.getUserName() + "!\n");
 					return user;
 				} else {
-					System.out.println(
+					System.err.println(
 							"Invalid credentials. Attempts remaining: " + loginService.getRemainingAttempts() + "\n");
 				}
 			} catch (Exception e) {
-				System.out.println("Error: " + e.getMessage() + "\n");
+				System.err.println("Error: " + e.getMessage() + "\n");
 			}
 		}
 
-		System.out.println("Maximum login attempts exceeded. Exiting application.");
+		System.err.println("Maximum login attempts exceeded. Exiting application.");
 		return null;
 	}
 

@@ -23,9 +23,10 @@ public class MainMenu {
 	        System.out.println("5. Reports");
 	        System.out.println("6. Logout");
 	        System.out.println("0. Exit Application");
-		
+        	System.out.println("-------------------------------------");
 	        int choice = InputUtil.readInt("Enter choice: ");
-	        
+        	//System.out.println("-------------------------------------");
+
 	        switch (choice) {
             case 1: employeeMenu.show(); break;
             case 2: departmentMenu.show(); break;
